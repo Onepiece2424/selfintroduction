@@ -1,7 +1,8 @@
 import './App.css';
 
 // components
-import UserForm from './components/UserForm';
+// import UserForm from './components/UserForm';
+import ChangeForm from './components/changeform/ChangeForm';
 
 // function
 import showResults from "./func/showResults";
@@ -9,7 +10,7 @@ import showResults from "./func/showResults";
 function App() {
   return (
     <div className="App">
-      <UserForm onSubmit={showResults} />
+      <ChangeForm onSubmit={showResults} />
     </div>
   );
 }
