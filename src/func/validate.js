@@ -8,5 +8,8 @@ export const validate = values => {
   if (!values.checkboxValue) {
     errors.checkboxValue = '必須項目です。'
   }
+  if (!values.modalform) {
+    errors.modalform = '必須項目です。'
+  }
   return errors
 }

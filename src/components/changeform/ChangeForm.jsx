@@ -1,8 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { reduxForm, Field, change } from 'redux-form'
 import renderField from '../renderField'
 import { Button } from '@material-ui/core';
 import { validate } from '../../func/validate';
+import ModalForm from '../modal/ModalForm';
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset, dispatch }) => {
 
@@ -14,6 +15,12 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset, dispatch }) => 
   const onCheckboxClick = (e) => {
     e.target.checked ? dispatch(change('changeform', 'checkboxValue', '今日も良い天気ですね！')) : dispatch(change('changeform', 'checkboxValue'))
   };
+
+  const [flag, setFlag] = useState(false)
+  const flagChange = () => {
+    setFlag(prev => !prev)
+  }
+
 
   return (
     <>
@@ -29,6 +36,12 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset, dispatch }) => 
         <br></br>
         <Field name="hiddenvalue" component={renderField} type="hidden" ref={inputEl} />
         </div>
+        <br></br>
+        <Button onClick={flagChange}>Modal入力フォームの表示</Button>
+        <br></br>
+        { flag &&
+          <ModalForm />
+        }
         <br></br>
         <Button color="secondary" variant="contained" type="submit">送信</Button>
         <Button color="secondary" variant="contained" disabled={pristine || submitting} onClick={reset}>
