@@ -1,6 +1,7 @@
 import React from 'react'
-import { Field } from 'redux-form'
+import { Field, reduxForm } from 'redux-form'
 import renderField from '../renderField'
+import { validate } from '../../func/validate';
 
 const ModalForm = () => {
   return (
@@ -12,4 +13,9 @@ const ModalForm = () => {
   )
 }
 
-export default ModalForm
+// export default ModalForm
+
+export default reduxForm({
+  form: 'modalform',
+  validate
+})(ModalForm)

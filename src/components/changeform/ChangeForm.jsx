@@ -16,11 +16,11 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset, dispatch }) => 
     e.target.checked ? dispatch(change('changeform', 'checkboxValue', '今日も良い天気ですね！')) : dispatch(change('changeform', 'checkboxValue'))
   };
 
+  // モーダルフォームを表示・非表示にするためのフラグ
   const [flag, setFlag] = useState(false)
   const flagChange = () => {
     setFlag(prev => !prev)
   }
-
 
   return (
     <>
@@ -39,9 +39,7 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset, dispatch }) => 
         <br></br>
         <Button onClick={flagChange}>Modal入力フォームの表示</Button>
         <br></br>
-        { flag &&
-          <ModalForm />
-        }
+        { flag && <ModalForm />}
         <br></br>
         <Button color="secondary" variant="contained" type="submit">送信</Button>
         <Button color="secondary" variant="contained" disabled={pristine || submitting} onClick={reset}>
