@@ -1,11 +1,13 @@
 import { createStore, combineReducers } from "redux";
 import { reducer as reduxFormReducer } from 'redux-form';
 import { user } from "../modules/user";
+import { buttonText } from "../modules/buttonText";
 
 // combineReducersの作成
 const reducer = combineReducers({
   form: reduxFormReducer,
   user,
+  buttonText,
 })
 
 const store = createStore(
