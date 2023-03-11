@@ -7,13 +7,14 @@ import ModalForm from '../modal/ModalForm';
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset, dispatch }) => {
 
-  // 隠しフィールドに値を参照させる
+  // 隠しFieldに値を参照させる
   const inputEl = useRef(null)
-  inputEl.current =  dispatch(change('changeform', 'hiddenvalue', '隠しフィールドの値だよ〜。'))
+  inputEl.current =  dispatch(change('changeform', 'hiddenvalue', '隠しFieldの値だよ〜。'))
 
   // チェックが変更されたら、'checkboxValue'フィールドの値を動的に変更する
   const onCheckboxClick = (e) => {
-    e.target.checked ? dispatch(change('changeform', 'checkboxValue', '今日も良い天気ですね！')) : dispatch(change('changeform', 'checkboxValue'))
+    const newValue = e.target.checked ? '今日も良い天気ですね！' : '';
+    dispatch(change('changeform', 'checkboxValue', newValue));
   };
 
   // モーダルフォームを表示・非表示にするためのフラグ
