@@ -29,12 +29,10 @@ const ModalForm = () => {
       <Paper elevation={12} className="modalContent">
         <br></br>
         <div>Modalフォームです。</div>
-        <Field name="modalform" component={renderField} />
         <br></br>
         <Field name="form1" component={renderField} label="form1" />
         <Field name="form2" component={renderField} label="form2" />
         <Field name="form3" component={renderField} label="form3" />
-        <Field name="form4" component={renderField} label="form4" />
         {/* <button onClick={buttonClick}>{buttonText.text}</button> */}
         <br></br>
       </Paper>

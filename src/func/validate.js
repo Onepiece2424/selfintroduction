@@ -20,8 +20,5 @@ export const validate = values => {
   if (!values.form3) {
     errors.form3 = '必須項目です。'
   }
-  if (!values.form4) {
-    errors.form4 = '必須項目です。'
-  }
   return errors
 }
