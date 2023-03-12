@@ -42,7 +42,9 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <Field name="hiddenvalue" component={renderField} type="hidden" />
         </div>
         <br></br>
-        <Button variant="outlined" color="secondary" onClick={flagChange}>Modal入力フォームの表示</Button>
+        <Button variant="outlined" color="secondary" onClick={flagChange}>
+          { flag ?  "Modal入力フォームの非表示" : "Modal入力フォームの表示"}
+        </Button>
         <br></br>
         <br></br>
         { flag && <ModalForm />}
