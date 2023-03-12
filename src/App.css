@@ -1,8 +1,7 @@
 .App {
   text-align: center;
-  padding: 10px;
-  margin: 10px;
   width: 100%;
+  padding-top: 40px;
 }
 
 .alert-message {
@@ -120,4 +119,9 @@ form input[type="button"] {
   form textarea {
     width: calc(100% - 10px);
   }
+}
+
+.modalContent {
+  padding: 10px 20px;
+  margin: 0px 100px;
 }
