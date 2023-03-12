@@ -27,6 +27,16 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
     dispatch(change('changeform', 'checkboxValue', newValue));
   };
 
+  // form名を配列として定義
+  const fieldNames = ["form1", "form2", "form3"]
+
+  // Modalの入力フォームのみクリア
+  const modalValueClear = () => {
+    fieldNames.forEach((fieldName) => {
+      dispatch(change('changeform', fieldName, ''));
+    });
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -51,8 +61,9 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <br></br>
         <Button color="secondary" variant="outlined" type="submit">送信</Button>
         <Button color="secondary" variant="outlined" disabled={pristine || submitting} onClick={reset}>
-          クリア
+          全てのフォームをクリア
         </Button>
+        <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームのみクリア</Button>
       </form>
     </>
   )
