@@ -11,5 +11,17 @@ export const validate = values => {
   if (!values.modalform) {
     errors.modalform = '必須項目です。'
   }
+  if (!values.form1) {
+    errors.form1 = '必須項目です。'
+  }
+  if (!values.form2) {
+    errors.form2 = '必須項目です。'
+  }
+  if (!values.form3) {
+    errors.form3 = '必須項目です。'
+  }
+  if (!values.form4) {
+    errors.form4 = '必須項目です。'
+  }
   return errors
 }
