@@ -5,6 +5,7 @@ import renderField from '../renderField'
 import { Button } from '@material-ui/core';
 import { validate } from '../../func/validate';
 import ModalForm from '../modal/ModalForm';
+import Text from '../text/Text';
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
 
@@ -37,6 +38,9 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
     });
   }
 
+  // fieldなしのデータを送信
+  dispatch(change('changeform', 'quoto', '日々反省、日々成長！！！'))
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -65,6 +69,8 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         </Button>
         <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームのみクリア</Button>
       </form>
+      <br></br>
+      <Text />
     </>
   )
 }
