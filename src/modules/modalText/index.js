@@ -16,7 +16,6 @@ export const modalText = (state = initialState, action) => {
 
 // Action Creator
 export const modalTextIndicate = (value) => {
-  console.log(value)
   return {
     type:  'MODAL_TEXT',
     payload: value
