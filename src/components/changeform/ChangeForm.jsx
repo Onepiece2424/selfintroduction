@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { reduxForm, Field, change } from 'redux-form'
 import renderField from '../renderField'
 import { Button } from '@material-ui/core';
 import { validate } from '../../func/validate';
 import ModalForm from '../modal/ModalForm';
 import Text from '../text/Text';
+import { modalFlagChange } from '../../modules/modalFlag';
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
 
-  // Modalフォームを表示・非表示にするためのフラグ
-  const [flag, setFlag] = useState(false)
+  const dispatch = useDispatch();
+
+  // Modalフォームを表示・非表示にするためのフラグとその切り替えを行うための関数
+  const modalFlag = useSelector(state => state.modalFlag)
   const flagChange = () => {
-    setFlag(prev => !prev)
+    modalFlag.flag ? dispatch(modalFlagChange(false)) :dispatch(modalFlagChange(true))
   }
 
-  const dispatch = useDispatch();
 
   // 隠しFieldに値を設定
   useEffect(() => {
@@ -60,11 +62,11 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <br></br>
         <br></br>
         <Button variant="outlined" color="secondary" onClick={flagChange}>
-          { flag ?  "Modal入力フォームの非表示" : "Modal入力フォームの表示"}
+          { modalFlag.flag ?  "Modal入力フォームの非表示" : "Modal入力フォームの表示"}
         </Button>
         <br></br>
         <br></br>
-        { flag && <ModalForm />}
+        { modalFlag.flag && <ModalForm />}
         <br></br>
         <Button color="secondary" variant="outlined" type="submit">送信</Button>
         <Button color="secondary" variant="outlined" disabled={pristine || submitting} onClick={reset}>
