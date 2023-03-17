@@ -56,6 +56,9 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <Field name="hiddenvalue" component={renderField} type="hidden" />
         </div>
         <br></br>
+        <Text />
+        <br></br>
+        <br></br>
         <Button variant="outlined" color="secondary" onClick={flagChange}>
           { flag ?  "Modal入力フォームの非表示" : "Modal入力フォームの表示"}
         </Button>
@@ -69,8 +72,6 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         </Button>
         <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームのみクリア</Button>
       </form>
-      <br></br>
-      <Text />
     </>
   )
 }
