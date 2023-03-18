@@ -4,12 +4,15 @@ import { reduxForm, Field, change } from 'redux-form'
 import { Button } from '@material-ui/core';
 
 // component
+import FriendModalForm from '../modal/FriendModalForm';
 import ModalForm from '../modal/ModalForm';
 import renderField from '../common/renderField'
 
 // func
 import { validate } from '../../func/validate';
+import { friendModalFlagChange } from '../../modules/friendModalFlag';
 import { modalFlagChange } from '../../modules/modalFlag';
+
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
 
@@ -19,6 +22,18 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
   const modalFlag = useSelector(state => state.modalFlag)
   const flagChange = () => {
     modalFlag.flag ? dispatch(modalFlagChange(false)) :dispatch(modalFlagChange(true))
+
+    // 友達データフォームを閉じる
+    dispatch(friendModalFlagChange(false))
+  }
+
+  // ともだちデータ入力フォームを表示・非表示にするためのフラグとその切り替えを行うための関数
+  const friendModalFlag = useSelector(state => state.friendModalFlag)
+  const friendFlagChange = () => {
+    friendModalFlag.flag ? dispatch(friendModalFlagChange(false)) :dispatch(friendModalFlagChange(true))
+
+    // Modalフォームを閉じる
+    dispatch(modalFlagChange(false))
   }
 
 
@@ -67,9 +82,13 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <Button variant="outlined" color="secondary" onClick={flagChange}>
           { modalFlag.flag ?  "Modal入力フォームの非表示" : "Modal入力フォームの表示"}
         </Button>
+        <Button variant="outlined" color="secondary" onClick={friendFlagChange}>
+          { friendModalFlag.flag ?  "友達データフォームの非表示" : "友達データフォームの表示"}
+        </Button>
         <br></br>
         <br></br>
         { modalFlag.flag && <ModalForm />}
+        { friendModalFlag.flag && <FriendModalForm />}
         <br></br>
         <Button color="secondary" variant="outlined" type="submit" disabled={submitting} >送信</Button>
         <Button color="secondary" variant="outlined" disabled={pristine || submitting} onClick={reset}>

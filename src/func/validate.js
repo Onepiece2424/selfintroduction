@@ -20,5 +20,14 @@ export const validate = values => {
   if (!values.placeofMemories) {
     errors.placeofMemories = '必須項目です。'
   }
+  if (!values.friend_name) {
+    errors.friend_name = '必須項目です。'
+  }
+  if (!values.friend_age) {
+    errors.friend_age = '必須項目です。'
+  }
+  if (!values.friend_job) {
+    errors.friend_job = '必須項目です。'
+  }
   return errors
 }
