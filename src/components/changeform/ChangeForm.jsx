@@ -27,10 +27,10 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
     dispatch(change('changeform', 'hiddenvalue', '隠しFieldの値だよ〜。'));
   }, [submitting]);
 
-  // チェックが変更されたら、'checkboxValue'フィールドの値を動的に変更する
+  // チェックが変更されたら、'commnet'フィールドの値を動的に変更する
   const onCheckboxClick = (e) => {
     const newValue = e.target.checked ? '今日も良い天気ですね！' : '';
-    dispatch(change('changeform', 'checkboxValue', newValue));
+    dispatch(change('changeform', 'commnet', newValue));
   };
 
   // form名を配列として定義
@@ -54,10 +54,10 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <Field name="username" component={renderField} label="名前" />
         <br></br>
         <div>
-        <label>チェックボックス（チェックすると設定された値が表示されます。）</label>
+        <label>コメント（チェックすると設定された値が表示されます。）</label>
         <div>
           <input type="checkbox" onChange={onCheckboxClick} />
-          <Field name="checkboxValue" component={renderField} type="text" />
+          <Field name="commnet" component={renderField} type="text" />
         </div>
         <br></br>
         <Field name="hiddenvalue" component={renderField} type="hidden" />
