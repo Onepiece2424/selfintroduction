@@ -15,7 +15,7 @@ import { friendModalFlagChange } from '../../modules/friendModalFlag';
 import { modalFlagChange } from '../../modules/modalFlag';
 
 
-const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
+const Changeform = ({ handleSubmit, submitting, reset }) => {
 
   const modalText = useSelector(state => state.modalText)
   const dispatch = useDispatch();
@@ -96,7 +96,7 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         { friendModalFlag.flag && <FriendModalForm />}
         <br></br>
         <Button color="secondary" variant="outlined" type="submit" disabled={submitting} >送信</Button>
-        <Button color="secondary" variant="outlined" disabled={pristine || submitting} onClick={reset}>
+        <Button color="secondary" variant="outlined" disabled={submitting} onClick={reset}>
           全てのフォームをクリア
         </Button>
         <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームのみクリア</Button>
