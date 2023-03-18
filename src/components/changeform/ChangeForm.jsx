@@ -51,9 +51,13 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
   }
 
 
-  // 隠しFieldに値を設定
+  // 「送信」ボタン押下時に実行
   useEffect(() => {
+    // 隠しFieldに値を設定し送信
     dispatch(change('changeform', 'hiddenvalue', '隠しFieldの値だよ〜。'));
+
+    // fieldなしのデータを送信
+    dispatch(change('changeform', 'quoto', '日々反省、日々成長！！！'))
 
     // eslint-disable-next-line
   }, [submitting]);
@@ -81,9 +85,6 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
       dispatch(change('changeform', fieldName, ''));
     });
   }
-
-  // fieldなしのデータを送信
-  // dispatch(change('changeform', 'quoto', '日々反省、日々成長！！！'))
 
   return (
     <>
