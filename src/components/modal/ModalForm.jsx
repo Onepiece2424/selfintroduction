@@ -13,8 +13,6 @@ import { modalFlagChange } from '../../modules/modalFlag'
 
 const ModalForm = () => {
 
-  const formState = useSelector(state => state.form.changeform.values)
-  const modalText = useSelector(state => state.modalText)
   const dispatch = useDispatch();
 
   // 登録ボタン押下時にテキスト表示
