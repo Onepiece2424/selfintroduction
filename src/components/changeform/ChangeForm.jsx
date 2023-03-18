@@ -42,6 +42,8 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
   // 隠しFieldに値を設定
   useEffect(() => {
     dispatch(change('changeform', 'hiddenvalue', '隠しFieldの値だよ〜。'));
+
+    // eslint-disable-next-line
   }, [submitting]);
 
   // チェックが変更されたら、'commnet'フィールドの値を動的に変更する
