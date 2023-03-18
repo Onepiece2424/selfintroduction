@@ -15,9 +15,11 @@ const ModalForm = () => {
 
   const dispatch = useDispatch();
 
-  // 登録ボタン押下時にテキスト表示
+  // 登録ボタン押下時に実行
   const formResister = (e) => {
     e.preventDefault()
+
+    // フォームのテキスト表示
     dispatch(modalTextIndicate(true))
 
     // モーダル入力フォームを閉じる
