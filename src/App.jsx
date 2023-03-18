@@ -5,6 +5,7 @@ import './App.css';
 import ChangeForm from './components/changeform/ChangeForm';
 // import LikeButton from './components/likeButton/LikeButton';
 import CatImages from './components/cats/CatImages';
+import FavoriteButton from './components/likeButton/FavoriteButton';
 
 // function
 import showResults from "./func/showResults";
@@ -16,6 +17,9 @@ function App() {
       <br></br>
       <br></br>
       <CatImages />
+      <br></br>
+      <br></br>
+      <FavoriteButton />
     </div>
   );
 }
