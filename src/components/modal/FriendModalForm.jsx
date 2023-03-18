@@ -8,7 +8,7 @@ import renderField from '../common/renderField'
 
 // func
 import { modalTextIndicate } from '../../modules/modalText'
-import { modalFlagChange } from '../../modules/modalFlag'
+import { friendModalFlagChange } from '../../modules/friendModalFlag'
 
 
 const FriendModalForm = () => {
@@ -21,7 +21,7 @@ const FriendModalForm = () => {
     dispatch(modalTextIndicate(true))
 
     // モーダル入力フォームを閉じる
-    dispatch(modalFlagChange(false))
+    dispatch(friendModalFlagChange(false))
   }
 
   return (
