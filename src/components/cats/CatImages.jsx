@@ -32,7 +32,7 @@ const CatImages = () => {
   return (
     <>
       <div>猫の画像</div>
-      <div>{loading || <img src={imageUrl} alt="猫の画像です。" width="300px" />}</div>
+      <div>{loading || <img src={imageUrl} alt="猫の画像です。" width="300px" height="200px" />}</div>
       <br></br>
       <button onClick={handleClick}>他のにゃんこも見る</button>
     </>
