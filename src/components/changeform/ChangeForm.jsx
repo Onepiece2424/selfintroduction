@@ -5,7 +5,6 @@ import renderField from '../common/renderField'
 import { Button } from '@material-ui/core';
 import { validate } from '../../func/validate';
 import ModalForm from '../modal/ModalForm';
-import Text from '../text/Text';
 import { modalFlagChange } from '../../modules/modalFlag';
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
@@ -45,6 +44,8 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
 
   return (
     <>
+      <h3>入力フォーム</h3>
+      <br></br>
       <form onSubmit={handleSubmit}>
         <Field name="username" component={renderField} label="名前" />
         <br></br>
@@ -57,8 +58,6 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <br></br>
         <Field name="hiddenvalue" component={renderField} type="hidden" />
         </div>
-        <br></br>
-        <Text />
         <br></br>
         <br></br>
         <Button variant="outlined" color="secondary" onClick={flagChange}>
