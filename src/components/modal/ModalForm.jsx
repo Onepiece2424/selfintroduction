@@ -31,9 +31,9 @@ const ModalForm = () => {
       {/* { modalText.flag &&
         <Paper elevation={3} className="modalContent">
           <div>Modalテキストです。</div>
-          <div>{formState.form1}</div>
-          <div>{formState.form2}</div>
-          <div>{formState.form3}</div>
+          <div>{formState.age}</div>
+          <div>{formState.birthPlace}</div>
+          <div>{formState.placeofMemories}</div>
         </Paper>
       } */}
 
@@ -41,9 +41,9 @@ const ModalForm = () => {
         <br></br>
         <div>Modalフォームです。</div>
         <br></br>
-        <Field name="form1" component={renderField} label="form1" />
-        <Field name="form2" component={renderField} label="form2" />
-        <Field name="form3" component={renderField} label="form3" />
+        <Field name="age" component={renderField} label="age" />
+        <Field name="birthPlace" component={renderField} label="birthPlace" />
+        <Field name="placeofMemories" component={renderField} label="placeofMemories" />
         <br></br>
         <button onClick={(e) => formResister(e)}>登録する</button>
         <br></br>

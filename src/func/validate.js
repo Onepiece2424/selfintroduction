@@ -5,20 +5,20 @@ export const validate = values => {
   } else if (values.username.length > 15) {
     errors.username = '15文字以内でなければいけません。'
   }
-  if (!values.checkboxValue) {
-    errors.checkboxValue = '必須項目です。'
+  if (!values.commnet) {
+    errors.commnet = '必須項目です。'
   }
   if (!values.modalform) {
     errors.modalform = '必須項目です。'
   }
-  if (!values.form1) {
-    errors.form1 = '必須項目です。'
+  if (!values.age) {
+    errors.age = '必須項目です。'
   }
-  if (!values.form2) {
-    errors.form2 = '必須項目です。'
+  if (!values.birthPlace) {
+    errors.birthPlace = '必須項目です。'
   }
-  if (!values.form3) {
-    errors.form3 = '必須項目です。'
+  if (!values.placeofMemories) {
+    errors.placeofMemories = '必須項目です。'
   }
   return errors
 }

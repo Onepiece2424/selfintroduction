@@ -34,7 +34,7 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
   };
 
   // form名を配列として定義
-  const fieldNames = ["form1", "form2", "form3"]
+  const fieldNames = ["age", "birthPlace", "placeofMemories"]
 
   // Modalの入力フォームのみクリア
   const modalValueClear = () => {
