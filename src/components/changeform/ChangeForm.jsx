@@ -31,9 +31,9 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
     dispatch(friendModalFlagChange(false))
 
     // 友達フォームのデータがあれば削除
-    formState.changeform && formState.changeform.values.friend_name && dispatch(change('changeform', 'friend_name', ''))
-    formState.changeform && formState.changeform.values.friend_age && dispatch(change('changeform', 'friend_age', ''))
-    formState.changeform && formState.changeform.values.friend_job && dispatch(change('changeform', 'friend_job', ''))
+    formState.changeform && formState.changeform.values && formState.changeform.values.friend_name && dispatch(change('changeform', 'friend_name', ''))
+    formState.changeform && formState.changeform.values &&  formState.changeform.values.friend_age && dispatch(change('changeform', 'friend_age', ''))
+    formState.changeform && formState.changeform.values && formState.changeform.values.friend_job && dispatch(change('changeform', 'friend_job', ''))
   }
 
   // ともだちデータ入力フォームを表示・非表示にするためのフラグとその切り替えを行うための関数
@@ -45,9 +45,9 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
     dispatch(modalFlagChange(false))
 
     // モーダルフォームのデータがあれば削除
-    formState.changeform.values.age && dispatch(change('changeform', 'age', ''))
-    formState.changeform.values.birthPlace && dispatch(change('changeform', 'birthPlace', ''))
-    formState.changeform.values.placeofMemories && dispatch(change('changeform', 'placeofMemories', ''))
+    formState.changeform && formState.changeform.values && formState.changeform.values.age && dispatch(change('changeform', 'age', ''))
+    formState.changeform && formState.changeform.values && formState.changeform.values.birthPlace && dispatch(change('changeform', 'birthPlace', ''))
+    formState.changeform && formState.changeform.values && formState.changeform.values.placeofMemories && dispatch(change('changeform', 'placeofMemories', ''))
   }
 
 
