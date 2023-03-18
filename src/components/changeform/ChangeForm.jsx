@@ -44,7 +44,7 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
   }
 
   // fieldなしのデータを送信
-  dispatch(change('changeform', 'quoto', '日々反省、日々成長！！！'))
+  // dispatch(change('changeform', 'quoto', '日々反省、日々成長！！！'))
 
   return (
     <>
