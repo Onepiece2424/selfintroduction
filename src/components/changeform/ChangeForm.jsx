@@ -7,6 +7,7 @@ import { Button } from '@material-ui/core';
 import FriendModalForm from '../modal/FriendModalForm';
 import ModalForm from '../modal/ModalForm';
 import renderField from '../common/renderField'
+import Text from '../text/Text'
 
 // func
 import { validate } from '../../func/validate';
@@ -16,6 +17,7 @@ import { modalFlagChange } from '../../modules/modalFlag';
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
 
+  const modalText = useSelector(state => state.modalText)
   const dispatch = useDispatch();
 
   // Modalフォームを表示・非表示にするためのフラグとその切り替えを行うための関数
@@ -77,6 +79,9 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <br></br>
         <Field name="hiddenvalue" component={renderField} type="hidden" />
         </div>
+        <br></br>
+        <br></br>
+        { modalText.flag && <Text />}
         <br></br>
         <br></br>
         <Button variant="outlined" color="secondary" onClick={flagChange}>
