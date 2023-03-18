@@ -19,14 +19,14 @@ const ModalForm = () => {
 
   return (
     <>
-      { modalText.flag &&
+      {/* { modalText.flag &&
         <Paper elevation={3} className="modalContent">
           <div>Modalテキストです。</div>
           <div>{formState.form1}</div>
           <div>{formState.form2}</div>
           <div>{formState.form3}</div>
         </Paper>
-      }
+      } */}
 
       <Box border={1} className="modalContent">
         <br></br>
