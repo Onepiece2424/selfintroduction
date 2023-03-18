@@ -119,9 +119,9 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
         <br></br>
         <Button color="secondary" variant="outlined" type="submit" disabled={submitting} >送信</Button>
         <Button color="secondary" variant="outlined" disabled={submitting} onClick={allFormReset}>
-          全てのフォームをクリア
+          全てのフォームと表示テキストをクリア
         </Button>
-        <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームのみクリア</Button>
+        <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームと表示テキストのみクリア</Button>
       </form>
     </>
   )
