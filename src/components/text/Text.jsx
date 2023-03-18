@@ -6,9 +6,7 @@ const Text = () => {
 
   return (
     <>
-      {formState.quoto}
-      <br></br>
-      {formState.username}
+      テキスト表示
     </>
   )
 }
