@@ -122,8 +122,8 @@ form input[type="button"] {
 }
 
 .modalContent {
-  padding: 10px 20px;
-  margin: 0px 100px;
+  /* padding: 10px 20px; */
+  /* margin: 0px 80px; */
 }
 
 /* 「いいねボタン(LikeButton.jsx)」のスタイル */

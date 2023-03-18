@@ -119,10 +119,11 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
         { friendModalFlag.flag && <FriendModalForm />}
         <br></br>
         <Button color="secondary" variant="outlined" type="submit" disabled={submitting} >送信</Button>
+        <br></br>
         <Button color="secondary" variant="outlined" disabled={submitting} onClick={allFormReset}>
-          全てのフォームと表示テキストをクリア
+          全てのフォームをクリア
         </Button>
-        <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームと表示テキストのみクリア</Button>
+        <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームのみクリア</Button>
       </form>
     </>
   )
