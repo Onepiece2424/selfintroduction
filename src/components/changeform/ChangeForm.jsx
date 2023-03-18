@@ -73,9 +73,9 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
   }
 
   // form名を配列として定義
-  const fieldNames = ["age", "birthPlace", "placeofMemories"]
+  const fieldNames = ["age", "birthPlace", "placeofMemories", "friend_name", "friend_age", "friend_job"]
 
-  // Modalの入力フォームのみクリア
+  // Modalフォームと表示テキストのみクリア
   const modalValueClear = () => {
     fieldNames.forEach((fieldName) => {
       dispatch(change('changeform', fieldName, ''));
