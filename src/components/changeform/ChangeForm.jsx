@@ -12,6 +12,7 @@ import Text from '../text/Text'
 // func
 import { validate } from '../../func/validate';
 import { friendModalFlagChange } from '../../modules/friendModalFlag';
+import { modalTextIndicate } from '../../modules/modalText';
 import { modalFlagChange } from '../../modules/modalFlag';
 
 
@@ -63,6 +64,14 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
     dispatch(change('changeform', 'commnet', newValue));
   };
 
+  // リセットボタン押下時に実行
+  const allFormReset = () => {
+    // 入力フォームのテキストをアンマウントする
+    dispatch(modalTextIndicate(false))
+    // データをリセット
+    reset()
+  }
+
   // form名を配列として定義
   const fieldNames = ["age", "birthPlace", "placeofMemories"]
 
@@ -109,7 +118,7 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
         { friendModalFlag.flag && <FriendModalForm />}
         <br></br>
         <Button color="secondary" variant="outlined" type="submit" disabled={submitting} >送信</Button>
-        <Button color="secondary" variant="outlined" disabled={submitting} onClick={reset}>
+        <Button color="secondary" variant="outlined" disabled={submitting} onClick={allFormReset}>
           全てのフォームをクリア
         </Button>
         <Button color="secondary" variant="outlined" onClick={modalValueClear}>Modalフォームのみクリア</Button>
