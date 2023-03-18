@@ -1,9 +1,9 @@
 export const validate = values => {
   const errors = {}
-  if (!values.username) {
-    errors.username = '必須項目です。'
-  } else if (values.username.length > 15) {
-    errors.username = '15文字以内でなければいけません。'
+  if (!values.name) {
+    errors.name = '必須項目です。'
+  } else if (values.name.length > 15) {
+    errors.name = '15文字以内でなければいけません。'
   }
   if (!values.commnet) {
     errors.commnet = '必須項目です。'

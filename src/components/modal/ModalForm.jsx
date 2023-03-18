@@ -36,8 +36,9 @@ const ModalForm = () => {
     <>
       <Box border={1} className="modalContent">
         <br></br>
-        <div>Modalフォームです。</div>
+        <div>自分データのフォームです。</div>
         <br></br>
+        <Field name="name" component={renderField} label="名前" />
         <Field name="age" component={renderField} label="age" />
         <Field name="birthPlace" component={renderField} label="birthPlace" />
         <Field name="placeofMemories" component={renderField} label="placeofMemories" />

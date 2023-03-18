@@ -27,6 +27,7 @@ const FriendModalForm = () => {
     dispatch(friendModalFlagChange(false))
 
     // モーダルフォームのデータがあれば削除
+    formState.name && dispatch(change('changeform', 'name', ''))
     formState.age && dispatch(change('changeform', 'age', ''))
     formState.birthPlace && dispatch(change('changeform', 'birthPlace', ''))
     formState.placeofMemories && dispatch(change('changeform', 'placeofMemories', ''))

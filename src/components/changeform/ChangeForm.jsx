@@ -45,6 +45,7 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
     dispatch(modalFlagChange(false))
 
     // モーダルフォームのデータがあれば削除
+     formState.changeform && formState.changeform.values && formState.changeform.values.age && dispatch(change('changeform', 'name', ''))
     formState.changeform && formState.changeform.values && formState.changeform.values.age && dispatch(change('changeform', 'age', ''))
     formState.changeform && formState.changeform.values && formState.changeform.values.birthPlace && dispatch(change('changeform', 'birthPlace', ''))
     formState.changeform && formState.changeform.values && formState.changeform.values.placeofMemories && dispatch(change('changeform', 'placeofMemories', ''))
@@ -77,7 +78,7 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
   }
 
   // form名を配列として定義
-  const fieldNames = ["age", "birthPlace", "placeofMemories", "friend_name", "friend_age", "friend_job"]
+  const fieldNames = ["name", "age", "birthPlace", "placeofMemories", "friend_name", "friend_age", "friend_job"]
 
 
   // 「Modalフォームのみクリア」ボタン押下時に実行
@@ -97,8 +98,6 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
       <h3>入力フォーム</h3>
       <br></br>
       <form onSubmit={handleSubmit}>
-        <Field name="username" component={renderField} label="名前" />
-        <br></br>
         <div>
         <label>コメント（チェックすると設定された値が表示されます。）</label>
         <div>

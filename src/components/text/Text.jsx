@@ -7,6 +7,7 @@ const Text = () => {
   return (
     <>
       テキスト表示
+      <div>{formState.changeform && formState.changeform.values && formState.changeform.values.name}</div>
       <div>{formState.changeform && formState.changeform.values && formState.changeform.values.age}</div>
       <div>{formState.changeform && formState.changeform.values && formState.changeform.values.birthPlace}</div>
       <div>{formState.changeform && formState.changeform.values && formState.changeform.values.placeofMemories}</div>
