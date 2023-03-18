@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 
-const FriendText = () => {
+const Text = () => {
 
   const formState = useSelector(state => state.form)
 
@@ -18,4 +18,4 @@ const FriendText = () => {
   )
 }
 
-export default FriendText
+export default Text
