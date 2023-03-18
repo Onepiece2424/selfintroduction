@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { reduxForm ,Field } from 'redux-form';
-import renderField from './renderField';
-import { createUserInfo, updateJob, updateAge, updateBloodType, updateUseBicycle, clearUserInfo, updateFavoriteColor, updateBirthday, updateEmail, updatePhysicalStrength } from '../modules/user';
+import renderField from '../common/renderField';
+import { createUserInfo, updateJob, updateAge, updateBloodType, updateUseBicycle, clearUserInfo, updateFavoriteColor, updateBirthday, updateEmail, updatePhysicalStrength } from '../../modules/user';
 
 // MUI
 import { Button } from '@material-ui/core';

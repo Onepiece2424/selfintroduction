@@ -13,10 +13,10 @@ import showResults from "./func/showResults";
 function App() {
   return (
     <div className="App">
-      <ChangeForm onSubmit={showResults} />
-      <br></br>
-      <br></br>
       <CatImages />
+      <br></br>
+      <br></br>
+      <ChangeForm onSubmit={showResults} />
       <br></br>
       <br></br>
     </div>

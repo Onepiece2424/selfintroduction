@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Field } from 'redux-form'
-import renderField from '../renderField'
+import renderField from '../common/renderField'
 import { modalTextIndicate } from '../../modules/modalText'
 import { Paper, Box } from '@material-ui/core'
 

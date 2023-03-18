@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { reduxForm, Field, change } from 'redux-form'
-import renderField from '../renderField'
+import renderField from '../common/renderField'
 import { Button } from '@material-ui/core';
 import { validate } from '../../func/validate';
 import ModalForm from '../modal/ModalForm';
