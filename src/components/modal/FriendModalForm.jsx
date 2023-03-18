@@ -1,6 +1,6 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { Field } from 'redux-form'
+import { useSelector, useDispatch } from 'react-redux'
+import { Field, change } from 'redux-form'
 import { Box } from '@material-ui/core'
 
 // component
@@ -13,6 +13,7 @@ import { friendModalFlagChange } from '../../modules/friendModalFlag'
 
 const FriendModalForm = () => {
 
+  const formState = useSelector(state => state.form.changeform.values)
   const dispatch = useDispatch();
 
   // 登録ボタン押下時に実行
@@ -24,6 +25,11 @@ const FriendModalForm = () => {
 
     // モーダル入力フォームを閉じる
     dispatch(friendModalFlagChange(false))
+
+    // モーダルフォームのデータがあれば削除
+    formState.friend_name && dispatch(change('changeform', 'age', ''))
+    formState.friend_age && dispatch(change('changeform', 'birthPlace', ''))
+    formState.friend_job && dispatch(change('changeform', 'placeofMemories', ''))
   }
 
   return (

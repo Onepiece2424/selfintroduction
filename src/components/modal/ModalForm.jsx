@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Field } from 'redux-form'
-import { Paper, Box } from '@material-ui/core'
+import { Field, change } from 'redux-form'
+import { Box } from '@material-ui/core'
 
 // component
 import renderField from '../common/renderField'
@@ -13,6 +13,7 @@ import { modalFlagChange } from '../../modules/modalFlag'
 
 const ModalForm = () => {
 
+  const formState = useSelector(state => state.form.changeform.values)
   const dispatch = useDispatch();
 
   // 登録ボタン押下時に実行
@@ -24,19 +25,15 @@ const ModalForm = () => {
 
     // モーダル入力フォームを閉じる
     dispatch(modalFlagChange(false))
+
+    // 友達フォームのデータがあれば削除
+    formState.friend_name && dispatch(change('changeform', 'friend_name', ''))
+    formState.friend_age && dispatch(change('changeform', 'friend_age', ''))
+    formState.friend_job && dispatch(change('changeform', 'friend_job', ''))
   }
 
   return (
     <>
-      {/* { modalText.flag &&
-        <Paper elevation={3} className="modalContent">
-          <div>Modalテキストです。</div>
-          <div>{formState.age}</div>
-          <div>{formState.birthPlace}</div>
-          <div>{formState.placeofMemories}</div>
-        </Paper>
-      } */}
-
       <Box border={1} className="modalContent">
         <br></br>
         <div>Modalフォームです。</div>
