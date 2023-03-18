@@ -17,6 +17,7 @@ import { modalFlagChange } from '../../modules/modalFlag';
 
 const Changeform = ({ handleSubmit, submitting, reset }) => {
 
+  const formState = useSelector(state => state.form.changeform.values)
   const modalText = useSelector(state => state.modalText)
   const dispatch = useDispatch();
 
@@ -27,6 +28,11 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
 
     // 友達データフォームを閉じる
     dispatch(friendModalFlagChange(false))
+
+    // 友達フォームのデータがあれば削除
+    formState.friend_name && dispatch(change('changeform', 'friend_name', ''))
+    formState.friend_age && dispatch(change('changeform', 'friend_age', ''))
+    formState.friend_job && dispatch(change('changeform', 'friend_job', ''))
   }
 
   // ともだちデータ入力フォームを表示・非表示にするためのフラグとその切り替えを行うための関数
@@ -36,6 +42,11 @@ const Changeform = ({ handleSubmit, submitting, reset }) => {
 
     // Modalフォームを閉じる
     dispatch(modalFlagChange(false))
+
+    // モーダルフォームのデータがあれば削除
+    formState.age && dispatch(change('changeform', 'age', ''))
+    formState.birthPlace && dispatch(change('changeform', 'birthPlace', ''))
+    formState.placeofMemories && dispatch(change('changeform', 'placeofMemories', ''))
   }
 
 
