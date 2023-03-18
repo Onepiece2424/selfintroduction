@@ -125,3 +125,12 @@ form input[type="button"] {
   padding: 10px 20px;
   margin: 0px 100px;
 }
+
+/* 「いいねボタン(LikeButton.jsx)」のスタイル */
+.likeButton {
+  background-color: rgb(231, 76, 60);
+  color: white;
+  padding: 0.8rem;
+  border-radius: 0.9rem;
+  cursor: pointer;
+}
