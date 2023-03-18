@@ -73,7 +73,7 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <br></br>
         { modalFlag.flag && <ModalForm />}
         <br></br>
-        <Button color="secondary" variant="outlined" type="submit" submitting >送信</Button>
+        <Button color="secondary" variant="outlined" type="submit" disabled={submitting} >送信</Button>
         <Button color="secondary" variant="outlined" disabled={pristine || submitting} onClick={reset}>
           全てのフォームをクリア
         </Button>
