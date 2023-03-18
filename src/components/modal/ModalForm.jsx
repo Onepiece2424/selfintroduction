@@ -1,9 +1,15 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Field } from 'redux-form'
-import renderField from '../common/renderField'
-import { modalTextIndicate } from '../../modules/modalText'
 import { Paper, Box } from '@material-ui/core'
+
+// component
+import renderField from '../common/renderField'
+
+// func
+import { modalTextIndicate } from '../../modules/modalText'
+import { modalFlagChange } from '../../modules/modalFlag'
+
 
 const ModalForm = () => {
 
@@ -15,6 +21,9 @@ const ModalForm = () => {
   const formResister = (e) => {
     e.preventDefault()
     dispatch(modalTextIndicate(true))
+
+    // モーダル入力フォームを閉じる
+    dispatch(modalFlagChange(false))
   }
 
   return (
