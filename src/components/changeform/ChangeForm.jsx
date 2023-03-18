@@ -27,8 +27,6 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
     dispatch(change('changeform', 'hiddenvalue', '隠しFieldの値だよ〜。'));
   }, [submitting]);
 
-  console.log(submitting)
-
   // チェックが変更されたら、'checkboxValue'フィールドの値を動的に変更する
   const onCheckboxClick = (e) => {
     const newValue = e.target.checked ? '今日も良い天気ですね！' : '';
