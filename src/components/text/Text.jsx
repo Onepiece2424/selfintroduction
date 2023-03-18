@@ -1,21 +1,21 @@
 import { useSelector } from 'react-redux'
 
-const Text = () => {
+const FriendText = () => {
 
-  const formState = useSelector(state => state.form.changeform.values) || null
+  const formState = useSelector(state => state.form)
 
   return (
     <>
       テキスト表示
-      <div>{formState.age}</div>
-      <div>{formState.birthPlace}</div>
-      <div>{formState.placeofMemories}</div>
+      <div>{formState.changeform.values.age}</div>
+      <div>{formState.changeform.values.birthPlace}</div>
+      <div>{formState.changeform.values.placeofMemories}</div>
       <br></br>
-      <div>{formState.friend_name}</div>
-      <div>{formState.friend_age}</div>
-      <div>{formState.friend_job}</div>
+      <div>{formState.changeform.values.friend_name}</div>
+      <div>{formState.changeform.values.friend_age}</div>
+      <div>{formState.changeform.values.friend_job}</div>
     </>
   )
 }
 
-export default Text
+export default FriendText
