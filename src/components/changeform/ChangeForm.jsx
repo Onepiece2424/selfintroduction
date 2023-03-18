@@ -25,7 +25,9 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
   // 隠しFieldに値を設定
   useEffect(() => {
     dispatch(change('changeform', 'hiddenvalue', '隠しFieldの値だよ〜。'));
-  }, [dispatch]);
+  }, [submitting]);
+
+  console.log(submitting)
 
   // チェックが変更されたら、'checkboxValue'フィールドの値を動的に変更する
   const onCheckboxClick = (e) => {
@@ -71,7 +73,7 @@ const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
         <br></br>
         { modalFlag.flag && <ModalForm />}
         <br></br>
-        <Button color="secondary" variant="outlined" type="submit">送信</Button>
+        <Button color="secondary" variant="outlined" type="submit" submitting >送信</Button>
         <Button color="secondary" variant="outlined" disabled={pristine || submitting} onClick={reset}>
           全てのフォームをクリア
         </Button>
