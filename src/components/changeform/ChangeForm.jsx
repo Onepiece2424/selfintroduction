@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { reduxForm, Field, change } from 'redux-form'
-import renderField from '../common/renderField'
 import { Button } from '@material-ui/core';
-import { validate } from '../../func/validate';
+
+// component
 import ModalForm from '../modal/ModalForm';
+import renderField from '../common/renderField'
+
+// func
+import { validate } from '../../func/validate';
 import { modalFlagChange } from '../../modules/modalFlag';
 
 const Changeform = ({ handleSubmit, pristine, submitting, reset }) => {
